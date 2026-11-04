@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+node_modules/
+__pycache__/
+.venv/
+dist/
+cdk.out/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+coverage/
+*.tsbuildinfo

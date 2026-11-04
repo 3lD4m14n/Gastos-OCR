@@ -1,0 +1,176 @@
+{
+  "images": [
+    {
+      "image_index": 1,
+      "transcription": "----------------------------------------\n***SUPERMERCADO EL AHORRAZO***\nT A Y B S.A.             R.U.C.: 80096143-9\nSupermercado - Panadería - Rotisería\nCentral - Av.Avelino M. c/Paz del Chaco\nTel:021-2376698. San Lorenzo - Paraguay\nSuc. Nro.3 - Julia Miranda Cueto 339\nI. V. A. Incluido\n\n----------------------------------------\nTimbrado:15673870\nValido desde:06/06/22\nFactura Electrónica:[REDACTADO]\nCondicion de Venta: Contado\nFecha/Hora: 25/09/26 21:37\nCajero   : [REDACTADO]\nCod.   Descrip Cant. Precio   Subt.  IVA\n----------------------------------------\n       1  x        4.500 Gs\n780681000200 VIRUTEX LANA     4.500G 10\n       1  x        5.950 Gs\n784000100196 ZITRON LAVAVA    5.950G 10\n       2  x        2.950 Gs\n770330703629 BIC BARBEADOR D  5.900G 10\n       1  x       11.000 Gs\n779074000025 PLUSBELLE SHA   11.000G 10\n       1  x        4.150 Gs\n784088800043 LIMCROM LAVAN    4.150G 10\n       1  x        9.000 Gs\n789115006452 OMO DT PO LV     9.000G 10\n       2  x        3.000 Gs\n779099000407 PLUSBELLE JABON  6.000G 10\n       1  x        3.400 Gs\n784076300762 POLIFOAM FIBR    3.400G 10\n       1  x        3.400 Gs\n784076300762 POLIFOAM FIBR    3.400G 10"
+    },
+    {
+      "image_index": 2,
+      "transcription": "       1  x        9.000 Gs\n789115006452 OMO DT PO LV     9.000G 10\n       2  x        3.000 Gs\n779099000407 PLUSBELLE JABON  6.000G 10\n       1  x        3.400 Gs\n784076300762 POLIFOAM FIBR    3.400G 10\n       1  x        3.400 Gs\n784076300762 POLIFOAM FIBR    3.400G 10\n       1  x       12.100 Gs\n789102413237 COLGATE CREMA   12.100G 10\n       1  x       10.300 Gs\n77987983     REXONA DEO CR   10.300G 10\n       1  x       10.300 Gs\n77987983     REXONA DEO CR   10.300G 10\n       1  x        8.950 Gs\n784105900287 DAILY TALCO P    8.950G 10\n       1  x        5.000 Gs\n784091100545 MARIELA ARROZ    5.000G 5\n       1  x        5.000 Gs\n784091100545 MARIELA ARROZ    5.000G 5\n       1  x        4.700 Gs\n784004200031 SOM BERG ULTR    4.700G 5\n       1  x       33.500 Gs\n789100041490 NESCAFE TRADI   33.500G 10\n       1  x        7.000 Gs\n784002923001 NORTE ATUN GR    7.000G 10\n       1  x        7.000 Gs\n784002923001 NORTE ATUN GR    7.000G 10\n       1  x        7.000 Gs\n784002923001 NORTE ATUN GR    7.000G 10\n       1  x       20.350 Gs\n786325872057 SOLANAS ACEIT   20.350G 5\n       1  x        4.500 Gs\n784039001286 RESPLANDOR DE    4.500G 10\n       2  x          200 Gs\n42           MACHETAZO BOLSA    400G 10\n----------------------------------------\nTOTAL GS: 189.400"
+    }
+  ],
+  "items": [
+    {
+      "raw_name": "VIRUTEX LANA",
+      "quantity": 1,
+      "unit_price": 4500,
+      "line_total": 4500,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "ZITRON LAVAVA",
+      "quantity": 1,
+      "unit_price": 5950,
+      "line_total": 5950,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "BIC BARBEADOR D",
+      "quantity": 2,
+      "unit_price": 2950,
+      "line_total": 5900,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "PLUSBELLE SHA",
+      "quantity": 1,
+      "unit_price": 11000,
+      "line_total": 11000,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "LIMCROM LAVAN",
+      "quantity": 1,
+      "unit_price": 4150,
+      "line_total": 4150,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "OMO DT PO LV",
+      "quantity": 1,
+      "unit_price": 9000,
+      "line_total": 9000,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "PLUSBELLE JABON",
+      "quantity": 2,
+      "unit_price": 3000,
+      "line_total": 6000,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "POLIFOAM FIBR",
+      "quantity": 1,
+      "unit_price": 3400,
+      "line_total": 3400,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "POLIFOAM FIBR",
+      "quantity": 1,
+      "unit_price": 3400,
+      "line_total": 3400,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "COLGATE CREMA",
+      "quantity": 1,
+      "unit_price": 12100,
+      "line_total": 12100,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "REXONA DEO CR",
+      "quantity": 1,
+      "unit_price": 10300,
+      "line_total": 10300,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "REXONA DEO CR",
+      "quantity": 1,
+      "unit_price": 10300,
+      "line_total": 10300,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "DAILY TALCO P",
+      "quantity": 1,
+      "unit_price": 8950,
+      "line_total": 8950,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "MARIELA ARROZ",
+      "quantity": 1,
+      "unit_price": 5000,
+      "line_total": 5000,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "MARIELA ARROZ",
+      "quantity": 1,
+      "unit_price": 5000,
+      "line_total": 5000,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "SOM BERG ULTR",
+      "quantity": 1,
+      "unit_price": 4700,
+      "line_total": 4700,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "NESCAFE TRADI",
+      "quantity": 1,
+      "unit_price": 33500,
+      "line_total": 33500,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "NORTE ATUN GR",
+      "quantity": 1,
+      "unit_price": 7000,
+      "line_total": 7000,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "NORTE ATUN GR",
+      "quantity": 1,
+      "unit_price": 7000,
+      "line_total": 7000,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "NORTE ATUN GR",
+      "quantity": 1,
+      "unit_price": 7000,
+      "line_total": 7000,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "SOLANAS ACEIT",
+      "quantity": 1,
+      "unit_price": 20350,
+      "line_total": 20350,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "RESPLANDOR DE",
+      "quantity": 1,
+      "unit_price": 4500,
+      "line_total": 4500,
+      "is_uncertain": false
+    },
+    {
+      "raw_name": "MACHETAZO BOLSA",
+      "quantity": 2,
+      "unit_price": 200,
+      "line_total": 400,
+      "is_uncertain": false
+    }
+  ],
+  "detected_total": 189400
+}
