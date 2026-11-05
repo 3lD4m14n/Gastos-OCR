@@ -1,14 +1,12 @@
 # Gestor de gastos con OCR de tickets
 
 PWA para registrar gastos en guaraníes y cargar tickets de supermercado con fotos.
-La especificación está en [`docs/spec.md`](docs/spec.md).
 
 | Carpeta | Contenido |
 | --- | --- |
 | `api/` | FastAPI y el merge de OCR (`app/ocr/merge.py`) |
 | `web/` | React + Vite (PWA) |
-| `infra/` | AWS CDK; por ahora, un stack vacío |
-| `docs/` | Especificación, fixtures y prototipos |
+| `infra/` | AWS CDK: `InfraStack` (Cognito de desarrollo) y `GastosProd` (producción) |
 
 Requisitos: Docker, [uv](https://docs.astral.sh/uv/) y Node 26. Para `cdk`, Node 24 evita el aviso
 de versión no probada.
@@ -28,6 +26,13 @@ cd web && npm ci && npm run dev       # http://localhost:5173
 Los valores por defecto están en `.env.example`. Son solo para desarrollo local. Para cambiarlos,
 copiá el archivo a `.env`.
 
+Para iniciar sesión hacen falta los identificadores del pool de Cognito de desarrollo, que salen
+de las salidas de `InfraStack`:
+
+- En `.env`: `COGNITO_USER_POOL_ID` y `COGNITO_CLIENT_ID`. Sin ellos, la API responde 503 en las
+  rutas autenticadas.
+- En `web/.env.local`: las variables de `web/.env.example`.
+
 `docker compose down` detiene todo; con `--volumes` también borra los datos locales.
 
 ## Tests y lint
@@ -45,7 +50,25 @@ cp .env.example api/.env
 cd api && uv run python -m scripts.smoke_s3
 ```
 
-## Fixtures
+## Deploy
 
-Antes de agregar un ticket real, seguí [`docs/fixtures/README.md`](docs/fixtures/README.md) para no
-publicar datos personales.
+En AWS la base es Aurora DSQL, sin VPC; en local y en CI, Postgres 16. El deploy es manual, en
+`us-east-2`, y necesita Docker y credenciales de AWS.
+
+```sh
+cd infra
+npx aws-cdk@2.1147.0 diff GastosProd
+npx aws-cdk@2.1147.0 deploy GastosProd \
+  --parameters BudgetEmail=<email-para-alertas> \
+  --parameters AllowedEmails=<email-1>,<email-2>
+./scripts/deploy_web.sh
+```
+
+Las migraciones corren dentro de `cdk deploy`: si fallan, la API no se actualiza. Los emails se
+pasan como parámetros para no versionarlos. Solo pueden crear cuenta los de `AllowedEmails`; la
+restricción se aplica al crear la cuenta, así que quitar un email no desactiva una cuenta existente.
+
+Agregá la salida `GoogleRedirectUri` a las URI de redirección autorizadas del cliente OAuth de
+Google. El secreto de Google vive en Secrets Manager y nunca en el repositorio.
+
+La base, el bucket y el pool de producción se conservan aunque se borre el stack.

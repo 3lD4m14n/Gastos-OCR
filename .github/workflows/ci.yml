@@ -21,6 +21,20 @@ jobs:
     defaults:
       run:
         working-directory: api
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: gastos
+          POSTGRES_PASSWORD: gastos_local
+          POSTGRES_DB: gastos
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U gastos"
+          --health-interval 3s
+          --health-timeout 3s
+          --health-retries 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
@@ -85,6 +99,7 @@ jobs:
           enable-cache: true
           cache-dependency-glob: api/uv.lock
       - run: docker compose up --detach --build --wait
+      # Las migraciones corren como parte de `up`: `api` no arranca si fallan.
       - run: curl --fail --silent --show-error http://127.0.0.1:8000/health/ready
       - name: Prueba de S3
         working-directory: api

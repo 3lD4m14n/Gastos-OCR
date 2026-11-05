@@ -11,3 +11,6 @@ cdk.out/
 .pytest_cache/
 coverage/
 *.tsbuildinfo
+
+# Fotos y transcripciones de tickets: viven solo en local.
+docs/fixtures/receipts/

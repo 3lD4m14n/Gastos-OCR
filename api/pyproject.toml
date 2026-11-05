@@ -4,19 +4,23 @@ version = "0.1.0"
 description = "API del gestor de gastos con OCR de tickets"
 requires-python = ">=3.14"
 dependencies = [
+    "alembic>=1.20.1",
+    "awslambdaric>=4.2.3",
     "boto3>=1.43.124",
     "fastapi>=0.162.0",
     "psycopg[binary]>=3",
     "pydantic>=2.14.2",
     "pydantic-settings>=2.16.2",
+    "pyjwt[crypto]>=2.15.1",
     "rapidfuzz>=3.14.6",
     "sqlalchemy>=2",
+    "tzdata>=2026.6",
     "uvicorn[standard]>=0.54.0",
 ]
 
 [dependency-groups]
 dev = [
-    "boto3-stubs[s3]>=1.43.124",
+    "boto3-stubs[dsql,s3]>=1.43.124",
     "httpx2>=2.16.0",
     "mypy>=2.4.1",
     "pytest>=9.2.0",
@@ -37,6 +41,10 @@ target-version = "py314"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF", "C4", "PT"]
+
+[tool.ruff.lint.per-file-ignores]
+# Define la configuración de prueba antes de importar la app, que la lee al cargarse.
+"tests/conftest.py" = ["E402"]
 
 [tool.mypy]
 python_version = "3.14"

@@ -5,7 +5,8 @@ import aws_cdk.assertions as assertions
 import pytest
 from aws_cdk.assertions import Match
 
-from infra.infra_stack import GOOGLE_SECRET_NAME, InfraStack
+from infra.cognito import GOOGLE_SECRET_NAME
+from infra.infra_stack import InfraStack
 
 
 @pytest.fixture
