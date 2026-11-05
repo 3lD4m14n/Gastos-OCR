@@ -1,14 +1,14 @@
 import logging
-from functools import lru_cache
 from typing import Literal
 
 from botocore.exceptions import BotoCoreError, ClientError
 from fastapi import APIRouter, Depends, Response, status
 from pydantic import BaseModel
-from sqlalchemy import Engine, create_engine, text
+from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
 
 from app.config import get_settings
+from app.db import get_engine
 from app.storage import get_s3_client
 
 logger = logging.getLogger(__name__)
@@ -24,15 +24,6 @@ class Liveness(BaseModel):
 class Readiness(BaseModel):
     status: Literal["ok", "unavailable"]
     checks: dict[str, CheckStatus]
-
-
-@lru_cache
-def get_engine() -> Engine:
-    return create_engine(
-        get_settings().database_url,
-        pool_pre_ping=True,
-        connect_args={"connect_timeout": 2},
-    )
 
 
 def check_database() -> CheckStatus:
