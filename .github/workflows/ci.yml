@@ -72,6 +72,7 @@ jobs:
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run mypy
+      - run: uv run pytest
       - run: npx --yes aws-cdk@2.1147.0 synth --strict --quiet
 
   smoke:

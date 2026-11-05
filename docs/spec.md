@@ -170,7 +170,7 @@ El bloque solapado (OMO, jabón Plusbelle y dos Polifoam) contiene a su vez un d
 
 | ID | Historia | Criterio de aceptación |
 | --- | --- | --- |
-| HU-01 | Inicio sesión con Google o con email | Botón "Continuar con Google" en la pantalla de Cognito; usuarios de prueba con email y contraseña; la sesión se renueva sola por 30 días |
+| HU-01 | Inicio sesión con Google o con email | Botón "Continuar con Google" en la pantalla de Cognito; usuarios de prueba con email y contraseña; la sesión se renueva sola durante 30 días desde el inicio de sesión; después hay que volver a entrar (la rotación del refresh token no extiende ese plazo) |
 | HU-02 | Veo mis gastos en el celular y en la PC | Un gasto creado en un dispositivo aparece en el otro al recargar o a los 30 s |
 | HU-03 | Gestiono categorías | 10 categorías por defecto; crear, renombrar, cambiar color y borrar (sus gastos pasan a "Otros") |
 | HU-04 | Cargo un gasto a mano | Fecha, monto en guaraníes, descripción, categoría; queda en el dashboard al instante |
@@ -279,7 +279,7 @@ Todo bajo `/api/v1`, con `Authorization: Bearer <token de Cognito>`. Sin endpoin
 | Worker OCR | Misma imagen, otro handler, invocación asíncrona | Timeout 120 s, 1 GB |
 | Base de datos | RDS PostgreSQL `db.t4g.micro`, 20 GB | Backups de 7 días |
 | Imágenes | S3 privado, Glacier a los 90 días | CORS solo para tu dominio |
-| Secretos | SSM Parameter Store | `DATABASE_URL`, `COGNITO_USER_POOL_ID`, `COGNITO_CLIENT_ID`, `BEDROCK_MODEL_ID` |
+| Secretos | SSM Parameter Store; Secrets Manager para el secreto de Google | `DATABASE_URL`, `COGNITO_USER_POOL_ID`, `COGNITO_CLIENT_ID`, `BEDROCK_MODEL_ID`; `gastos-ocr/dev/google-client-secret`, que CDK referencia sin copiarlo al código |
 | IaC | AWS CDK en Python | Un `cdk deploy` levanta todo |
 
 **Costo (aproximado).** Un ticket de 3 fotos ≈ 9.000 tokens de entrada y 1.500 de salida ≈ USD 0,016 con Haiku 4.5. 100 tickets/mes ≈ USD 1,60 de Bedrock; RDS ≈ USD 13/mes; el resto, centavos.

@@ -35,7 +35,7 @@ copiá el archivo a `.env`.
 ```sh
 cd api && uv run ruff check . && uv run ruff format --check . && uv run mypy && uv run pytest
 cd web && npm run lint && npm run typecheck && npm test && npm run build
-cd infra && uv run ruff check . && uv run mypy && npx aws-cdk@2.1147.0 synth --strict --quiet
+cd infra && uv run ruff check . && uv run mypy && uv run pytest && npx aws-cdk@2.1147.0 synth --strict --quiet
 ```
 
 Prueba del flujo de subida contra RustFS, con el stack levantado:
